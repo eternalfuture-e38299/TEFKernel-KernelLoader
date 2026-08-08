@@ -1,0 +1,32 @@
+{
+  "pkgId": "eternal.future.kernelloader",
+  "name": "KernelLoader",
+  "author": "eternalfuture-e38299",
+  "description": "一款轻量的ModLoader, 旨意提供底层内核的api",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "detailedInformationURL": "",
+  "updateURL": "",
+  "dependence": [],
+  "support": {
+    "android": {
+      "arm64": true,
+      "arm": true
+    },
+    "windows": {
+      "x64": true,
+      "x86": true
+    },
+    "linux": {
+      "x64": true,
+      "x86": true
+    },
+    "mac": {
+      "x64": true,
+      "arm64": true
+    },
+    "ios": {
+      "arm64": true
+    }
+  }
+}
