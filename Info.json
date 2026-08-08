@@ -5,8 +5,7 @@
   "description": "一款轻量的ModLoader, 旨意提供底层内核的api",
   "version": "1.0.0",
   "versionCode": 1,
-  "detailedInformationURL": "",
-  "updateURL": "",
+  "detailedInformationURL": "https://github.com/eternalfuture-e38299/TEFKernel-KernelLoader",
   "dependence": [],
   "support": {
     "android": {
@@ -23,9 +22,6 @@
     },
     "mac": {
       "x64": true,
-      "arm64": true
-    },
-    "ios": {
       "arm64": true
     }
   }

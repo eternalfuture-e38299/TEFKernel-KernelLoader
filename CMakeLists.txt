@@ -37,15 +37,23 @@ target_link_libraries(KernelLoader
 
 
 if (CMAKE_BUILD_TYPE STREQUAL "Release")
-    if (CMAKE_SYSTEM_NAME STREQUAL "Linux" OR ANDROID OR CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+    if (CMAKE_SYSTEM_NAME STREQUAL "Linux" OR ANDROID)
         add_custom_command(TARGET KernelLoader POST_BUILD
-                COMMAND ${CMAKE_COMMAND} -E echo "Stripping symbols from KernelLoader..."
+                COMMAND ${CMAKE_COMMAND} -E echo "Stripping symbols from KernelLoader"
                 COMMAND ${CMAKE_STRIP} --strip-all $<TARGET_FILE:KernelLoader>
                 COMMENT "Stripping symbols from KernelLoader library using strip command"
                 VERBATIM
         )
+    elseif (CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+        # macOS 使用不同的 strip 选项
+        add_custom_command(TARGET KernelLoader POST_BUILD
+                COMMAND ${CMAKE_COMMAND} -E echo "Stripping symbols from KernelLoader..."
+                COMMAND ${CMAKE_STRIP} -S $<TARGET_FILE:KernelLoader>
+                COMMENT "Stripping symbols from KernelLoader library using strip command"
+                VERBATIM
+        )
     endif()
-endif ()
+endif()
 
 
 if(ANDROID)
